@@ -1,1 +1,41 @@
+#include <iostream>
+
+class FibonacciBase {
+protected:
+    int current;
+    int next;
+
+public:
+    FibonacciBase() : current(0), next(1) {}
+
+    int getNext() {
+        int temp = current;
+        current = next;
+        next = temp + current;
+        return temp;
+    }
+};
+
+class FibonacciSeries : public FibonacciBase {
+public:
+    void generateSeries(int n) {
+        std::cout << "Fibonacci Series up to " << n << " terms: ";
+        for (int i = 0; i < n; ++i) {
+            int fib = getNext();
+            std::cout << fib << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    int n;
+    std::cout << "Enter the number of terms in the Fibonacci Series: ";
+    std::cin >> n;
+
+    FibonacciSeries fibSeries;
+    fibSeries.generateSeries(n);
+
+    return 0;
+}
 

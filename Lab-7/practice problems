@@ -1,1 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define endl '\n'
+
+class Vehicle{
+public:
+    string model;
+        int year;
+
+        void display(){
+        cout<<"Model:"<<model<<endl;
+        cout<<"year:"<<year<<endl;
+        }
+
+};
+
+ class Car{
+ public:
+     string color;
+     int weight;
+
+     void display(){
+     cout<<"Color:"<<color<<endl;
+     cout<<"Weight:"<<weight<<endl;
+     }
+ };
+
+ class Motorcycle{
+ public:
+     string color;
+     int weight;
+     void display(){
+     cout<<"Color:"<<color<<endl;
+     cout<<"Weight:"<<weight<<endl;
+
+     }
+ };
+
+ int main(){
+ Vehicle ve;
+ ve.model="Banson225";
+ ve.year=2015;
+
+ ve.display();
+ Car cr;
+ cr.color="Green";
+ cr.weight=2555;
+ cr.display();
+
+ Motorcycle motor;
+ motor.color="Yellow";
+ motor.weight=500;
+ motor.display();
+ return 0;
+
+ }
+
+
+
+
+
+
 

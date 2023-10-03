@@ -1,1 +1,60 @@
+///Bear and big borother:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b,year=0;
+    cin>>a>>b;
+    while(a<=b)
+    {
+        a*=3;
+        b*=2;
+        year++;
+    }
+
+    cout<<year<<endl;
+    return 0;
+}
+
+///soldier and banannas:
+#include <iostream>
+using namespace std;
+int main() {
+  int k, n, w,total_cost=0;
+  cin>>k>>n>>w;
+  for(int i=1;i<=w;i++)
+  {
+      total_cost+= i*k;
+  }
+  if (total_cost<=n){
+    cout<<0<<endl;
+  }
+  else{
+    cout<<total_cost-n<<endl;
+  }
+  return 0;
+}
+
+///Elephant:
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+  int x;
+  cin >> x;
+  // dp[i] stores the minimum number of steps needed to reach point i
+  vector<int> dp(x + 1, INT_MAX);
+  dp[0] = 0;
+  // Iterate over all possible step sizes
+  for (int step = 1; step <= 5; step++) {
+    // Iterate over all points that can be reached in step steps
+    for (int i = step; i <= x; i++) {
+      // Update the minimum number of steps needed to reach point i
+      dp[i] = min(dp[i], dp[i - step] + 1);
+    }
+  }
+  // Print the minimum number of steps needed to reach point x
+  cout << dp[x] << endl;
+  return 0;
+}
 

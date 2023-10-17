@@ -1,1 +1,43 @@
 
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin>>n;
+
+    string round;
+    cin>>round;
+
+    int Anton=0;
+    int Dainik=0;
+
+    for(int i=0;i<n;i++)
+    {
+        if(round[i]=='A')
+        {
+            Anton++;
+        }
+
+        else
+        {
+            Dainik++;
+        }
+    }
+
+    if(Anton>Dainik)
+    {
+        cout<<"Anton"<<endl;
+    }
+    else if(Anton<Dainik)
+    {
+        cout<<"Danik"<<endl;
+    }
+    else
+    {
+        cout<<"Friendship"<<endl;
+    }
+
+    return 0;
+}

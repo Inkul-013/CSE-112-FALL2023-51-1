@@ -1,1 +1,71 @@
+#include <iostream>
+using namespace std;
+template <typename T1, typename T2>
+class Array
+{
+private:
+    T1* arr1;
+    T2* arr2;
+    int s1;
+    int s2;
+public:
+    Array(int s1, int s2)
+    {
+        this->s1 = s1;
+        this->s2 = s2;
+        arr1 = new T1[s1];
+        arr2 = new T2[s2];
+    }
+    void insert(int index, T1 value)
+    {
+        if (index < 0 || index > s1)
+        {
+            cout << "Index out of bounds" << endl;
+            return;
+        }
+        for (int i = s1 - 1; i >= index; i--)
+        {
+            arr1[i + 1] = arr1[i];
+        }
+        arr1[index] = value;
+        s1++;
+    }
+    void insert(int index, T2 value)
+    {
+        if (index < 0 || index > s2)
+        {
+            cout << "Index out of bounds" << endl;
+            return;
+        }
+        for (int i = s2 - 1; i >= index; i--)
+        {
+            arr2[i + 1] = arr2[i];
+        }
+        arr2[index] = value;
+        s2++;
+    }
+    void print()
+    {
+        for (int i = 0; i < s1; i++)
+        {
+            cout << arr1[i] << " ";
+        }
+        cout << endl;
+        for (int i = 0; i < s2; i++)
+        {
+            cout << arr2[i] << " ";
+        }
+        cout << endl;
+    }
+};
+int main()
+{
+    Array<int, char> arr(2, 2);
+    arr.insert(0, 1);
+    arr.insert(1, 'a');
+    arr.insert(2, 2);
+    arr.insert(3, 'b');
+    arr.print();
+    return 0;
+}
 

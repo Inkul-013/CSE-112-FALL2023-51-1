@@ -1,1 +1,23 @@
-
+#include <iostream>
+using namespace std;
+int greatest(int a, int b, int c) {
+    return max(max(a, b), c);
+}
+char greatest(char a, char b, char c) {
+    return max(max(a, b), c);
+}
+float greatest(float a, float b, float c) {
+    return max(max(a, b), c);
+}
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << greatest(a, b, c) << endl;
+    char x, y, z;
+    cin >> x >> y >> z;
+    cout << greatest(x, y, z) << endl;
+    float p, q, r;
+    cin >> p >> q >> r;
+    cout << greatest(p, q, r) << endl;
+    return 0;
+}

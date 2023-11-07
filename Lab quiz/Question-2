@@ -1,15 +1,12 @@
 #include <iostream>
 using namespace std;
-int greatest(int a, int b, int c) {
+template <typename T>
+T greatest(T a, T b, T c)
+{
     return max(max(a, b), c);
 }
-char greatest(char a, char b, char c) {
-    return max(max(a, b), c);
-}
-float greatest(float a, float b, float c) {
-    return max(max(a, b), c);
-}
-int main() {
+int main()
+{
     int a, b, c;
     cin >> a >> b >> c;
     cout << greatest(a, b, c) << endl;
